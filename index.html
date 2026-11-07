@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Beautiful Story ♡</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff9f5;
+      color: #765c58;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background: linear-gradient(
+        145deg, #fff5f1, #f8e2df
+      );
+    }
+
+    .small {
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #b78e8a;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #987c76;
+      margin-bottom: 35px;
+    }
+
+    button {
+      background: #bd8e8a;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #9f706d;
+      transform: translateY(-3px);
+    }
+
+    .heart {
+      color: #c88f91;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .story {
+      padding: 100px 25px;
+    }
+
+    .story h2 {
+      font-size: 38px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .story p {
+      max-width: 480px;
+      margin: auto;
+      line-height: 2;
+      color: #987c76;
+    }
+
+    footer {
+      padding: 30px;
+      color: #b78e8a;
+      font-size: 13px;
+    }
+  
+.gallery {
+  padding: 90px 20px;
+  background: #fffaf7;
+}
+
+.gallery h2 {
+  font-size: 42px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.gallery-intro {
+  color: #a58a83;
+  margin-bottom: 45px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 750px;
+  margin: auto;
+}
+
+.polaroid {
+  background: white;
+  padding: 12px 12px 25px;
+  box-shadow: 0 5px 20px #765c5815;
+  transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.polaroid p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #987c76;
+}
+
+@media (max-width: 500px) {
+  .photo-grid {
+    gap: 15px;
+  }
+
+  .gallery h2 {
+    font-size: 34px;
+  }
+}
+
+.timeline {
+  padding: 90px 25px;
+  background: #f9eeeb;
+}
+
+.timeline h2 {
+  font-size: 42px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.timeline-intro {
+  color: #987c76;
+  margin-bottom: 55px;
+}
+
+.timeline-container {
+  max-width: 550px;
+  margin: auto;
+  text-align: left;
+  border-left: 1px solid #d9aaa5;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.timeline-item::before {
+  content: "♡";
+  position: absolute;
+  left: -43px;
+  top: 0;
+  color: #bd8e8a;
+  background: #f9eeeb;
+  font-size: 22px;
+}
+
+.timeline-date {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #bd8e8a;
+  margin-bottom: 10px;
+}
+
+.timeline-item h3 {
+  font-size: 23px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  line-height: 1.8;
+  color: #987c76;
+  font-size: 14px;
+}
+
+.letter-section {
+  padding: 100px 25px;
+  background: #fff9f5;
+}
+
+.letter-section h2 {
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.letter-section .intro {
+  color: #987c76;
+  margin-bottom: 35px;
+}
+
+.envelope {
+  font-size: 85px;
+  margin: 25px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.envelope:hover {
+  transform: scale(1.1);
+}
+
+.letter {
+  display: none;
+  max-width: 520px;
+  margin: 30px auto 0;
+  padding: 35px 28px;
+  background: #fff;
+  box-shadow: 0 5px 25px #765c5815;
+  text-align: left;
+  line-height: 2;
+  animation: appear 0.8s ease;
+}
+
+.letter.open {
+  display: block;
+}
+
+.letter h3 {
+  font-size: 25px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.letter p {
+  color: #876d67;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.close-letter {
+  margin-top: 15px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.countdown-section {
+  padding: 100px 20px;
+  background: #f9eeeb;
+}
+
+.countdown-section h2 {
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.countdown-section .intro {
+  color: #987c76;
+  margin-bottom: 40px;
+}
+
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 35px auto;
+}
+
+.time-box {
+  background: #fffaf7;
+  padding: 25px 20px;
+  min-width: 85px;
+  border-radius: 12px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 32px;
+  color: #bd8e8a;
+}
+
+.time-box small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #987c76;
+}
+
+.countdown-quote {
+  font-style: italic;
+  color: #987c76;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="heart">♡</div>
+
+    <p class="small">A little place called us</p>
+
+    <h1>Hello Sayang !<br>This is virtual present</h1>
+
+    <p class="subtitle">
+      I made this little website<br>
+      just for you, sayang. ♡
+    </p>
+
+    <button onclick="showStory()">
+      Open our story ♡
+    </button>
+  </section>
+
+  <section class="story" id="story">
+    <div class="heart">♡</div>
+    <h2>Dear Qistina,</h2>
+
+    <p>
+      I made this little corner of the internet
+      just for us. A place to keep our memories,
+      our stories and all the little things
+      that make us who we are.
+      <br><br>
+      Thank you for being part of my story.
+    </p>
+  </section>
+
+  
+<section class="gallery" id="memories">
+
+  <div class="heart">♡</div>
+
+  <h2>Little Memories</h2>
+
+  <p class="gallery-intro">
+    Moments yang b takkan pernah lupa sepanjang kita kenal hehe.
+  </p>
+
+  <div class="photo-grid">
+
+    <div class="polaroid">
+      <img src="images/photo1.jpg" alt="Our memory">
+      <p>Our first ever meet, i've enjoy a lot to talk to you ♡</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/photo2.jpg" alt="Our memory">
+      <p>First present b bagi kat sayang ! How cute you two</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/photo3.jpg" alt="Our memory">
+      <p>Kita spend so much quality time together kan sayang?</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/photo4.jpg" alt="Our memory">
+      <p>Your plan always makes me smile tau !</p>
+    </div>
+   
+<div class="polaroid">
+  <img src="images/photo5.jpg" alt="Our memory">
+  <p>This is the time b pulak suprise sayang hehe</p>
+</div>
+
+<div class="polaroid">
+  <img src="images/photo6.jpg" alt="Our memory">
+  <p>My baby, sayang, cinta, segala-galanyaaaaa</p>
+</div>
+
+  </div>
+
+</section>
+
+<section class="timeline" id="our-story">
+
+  <div class="heart">♡</div>
+
+  <h2>This is Our Story!</h2>
+
+  <p class="timeline-intro">
+    Every little moment brought us here.
+  </p>
+
+  <div class="timeline-container">
+
+    <div class="timeline-item">
+      <div class="timeline-date">28 MARCH 2026</div>
+      <h3>It started with a hello.</h3>
+      <p>
+        A simple conversation at 3 AM.
+        Neither of us knew that it would
+        become something this beautiful.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">7 APRIL 2026</div>
+      <h3>Finally, together.</h3>
+      <p>
+        400 kilometres just to see you.
+        And somehow, every kilometre
+        felt worth it.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">OUR PRESENT</div>
+      <h3>Still choosing you, always.</h3>
+      <p>
+        Through the good days, difficult days,
+        laughter and tears. I am still grateful
+        that I get to do life with you.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">OUR FUTURE</div>
+      <h3>Until we grow old.</h3>
+      <p>
+        One day, these memories will become
+        the beginning of our own little family.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="letter-section">
+
+  <div class="heart">♡</div>
+
+  <h2>A Letter For You</h2>
+
+  <p class="intro">
+    There are things I want you to know.
+  </p>
+
+  <div class="envelope"
+       onclick="toggleLetter()">
+    💌
+  </div>
+
+  <p>Tap the envelope to open your letter.</p>
+
+  <div class="letter" id="loveLetter">
+
+   <div id="loveLetter" class="love-letter">
+  <h2>To My Future Wife,</h2>
+
+  <p>Hi sayang,</p>
+
+  <p>I don't really know where to begin, because there are so many things that I've written to you throughout our journey. Some were written when I was happy, some when things weren't going so well, and some when I simply wanted you to know how much you mean to me.</p>
+
+  <p>But if there's one thing that remains the same in every single letter, it's how grateful I am to have you in my life.</p>
+
+  <p>Have you ever heard about <em>jodoh yang tak dirancang?</em></p>
+  <p><strong>Yes, that's us.</strong></p>
+
+  <p>Who would've thought that two people who barely knew each other could eventually become this important to one another? It started with a simple conversation, a random night, and eventually, a journey that neither of us could have predicted.</p>
+
+  <p>I still remember how everything started. From our first conversation to the day I decided to travel all the way to KL just to see you. Looking back, it might seem like a simple thing, but to me, that journey was the beginning of something I never wanted to lose.</p>
+
+  <p>Sayang, before you came into my life, I had my own experiences. I had been through things that made me question a lot about love, trust and the idea of having someone by my side again.</p>
+
+  <p>But somehow, Allah brought you into my life at a time I never expected.</p>
+  <p>And I'm thankful.</p>
+
+  <h3>To the girl who makes me feel understood,</h3>
+
+  <p>You know, I'm not someone who easily shares what's going on inside my head. Most of the time, I prefer to keep things to myself. I tend to deal with my problems quietly because I don't want other people to worry.</p>
+
+  <p>But with you, things feel different.</p>
+
+  <p>You make me feel comfortable enough to talk about things that I would normally keep to myself. You listen, you try to understand, and even when you don't have the answers, your presence alone makes things feel a little lighter.</p>
+
+  <p>I hope you know that you don't always have to be the strong one.</p>
+
+  <p>I know how hardworking and independent you are. I know you are used to figuring things out on your own. But sayang, when you're with me, I want you to know that you can rest too.</p>
+
+  <p>You don't have to carry everything alone. You don't always have to pretend that you're okay.</p>
+
+  <p>Let me be someone you can lean on.</p>
+
+  <p>I may not have all the answers, and I may not always know the right things to say, but I want to keep learning how to love you better.</p>
+
+  <h3>About the difficult days we've been through,</h3>
+
+  <p>I know things haven't always been easy for us.</p>
+
+  <p>Especially when it comes to financial matters. We've had our own struggles, and there were moments when things felt heavier than they should have been.</p>
+
+  <p>I know you've always been the first person to offer help, even when you knew that helping me might eventually make things difficult for yourself.</p>
+
+  <p>And honestly, sometimes I feel guilty.</p>
+
+  <p>Not because I don't appreciate what you've done, but because I wish I could give you more instead of allowing you to carry some of my burdens.</p>
+
+  <p>I know there were times you used money that you had planned to keep for yourself, and I haven't forgotten that.</p>
+
+  <p>I want you to know that I appreciate every single thing you've done. I will do my best to return what I've borrowed, little by little, and I don't want you to feel that your kindness has gone unnoticed.</p>
+
+  <p>But please, don't ever feel that you're not helping enough.</p>
+
+  <p>You have done more than you probably realise.</p>
+
+  <p>And I hope you understand that I don't measure your love through the things you can give me.</p>
+
+  <p><strong>I want you, not what you can provide.</strong></p>
+
+  <p>We might not have everything figured out right now, but that doesn't mean we won't get there.</p>
+
+  <p>Remember, we are in this together.</p>
+
+  <h3>About our future,</h3>
+
+  <p>One thing I want you to remember is that I'm serious about us.</p>
+
+  <p>I don't want this relationship to be something that we simply enjoy for a moment and leave behind when things get difficult.</p>
+
+  <p>I want something intentional with you.</p>
+
+  <p>I want to see you achieve your dreams. I want to be there when you get the things you've been working so hard for. I want to celebrate your achievements, comfort you when things don't go as planned, and remind you that you are never alone.</p>
+
+  <p>And one day, I want to call you my wife.</p>
+
+  <p>I look forward to our hari pertunangan. I look forward to the day we finally get to make our promises in front of our families. I look forward to building a home with you, having our own routines, arguing over little things, laughing at silly jokes and figuring out life together.</p>
+
+  <p>I know marriage isn't always going to be beautiful and easy. There will be responsibilities, disagreements and difficult days.</p>
+
+  <p>But I hope we will always choose to understand each other instead of giving up on each other.</p>
+
+  <p><strong>I want us to grow together, not just grow old together.</strong></p>
+
+  <h3>And to my birthday girl,</h3>
+
+  <p>Happy 27th birthday, sayang.</p>
+
+  <p>I pray that Allah grants everything that your heart has been wishing for. Semoga rezeki sayang sentiasa melimpah ruah, dipanjangkan umur, diberikan kesihatan yang baik and dipermudahkan segala urusan di dunia dan akhirat.</p>
+
+  <p>I'm sorry that I couldn't be there to celebrate your birthday the way I wanted to.</p>
+
+  <p>But I hope you know that even when I'm not physically beside you, you're always in my thoughts.</p>
+
+  <p>Maybe this year we celebrate things a little differently. But I hope that in the coming years, after we're married, I get to celebrate every single birthday with you.</p>
+
+  <p>No more wishing from a distance. No more missing important moments because we're miles apart.</p>
+
+  <p>Just us, celebrating another year of your life together.</p>
+
+  <p>Happy birthday, cinta b.</p>
+
+  <p>My future wife and the future mother of our kids.</p>
+
+  <p><strong>I love you so, so, so much.</strong></p>
+
+  <h3>If there's one last thing I want to tell you,</h3>
+
+  <p>Thank you for choosing to stay.</p>
+
+  <p>Thank you for loving me even when I'm not at my best. Thank you for being patient with me, for listening to my worries, and for giving me a reason to look forward to tomorrow.</p>
+
+  <p>I know I'm not a perfect man. I still have a lot to improve, a lot to learn and a lot to achieve.</p>
+
+  <p>But I promise to keep working on myself. Not just for you, but for the future that we keep talking about.</p>
+
+  <p>I pray that Allah protects our relationship, guides us towards what is good, gives us patience through every test and eventually brings us together in the most beautiful way.</p>
+
+  <p>If Allah has written us for each other, may He make the journey towards that day easier.</p>
+
+  <p>And if there's one thing I hope you never forget, it's this:</p>
+
+  <p>You don't have to be perfect to be loved by me. You don't have to have everything figured out. You don't have to be strong all the time.</p>
+
+  <p>Just be yourself, sayang.</p>
+
+  <p>Because among all the unexpected things that have happened in my life, meeting you is one of the things I'll always be grateful for.</p>
+
+  <p>Here's to all the letters I've written, all the memories we've made, and all the stories we haven't experienced yet.</p>
+
+  <p>I hope this isn't the last chapter.</p>
+
+  <p><strong>I hope this is just the beginning of our forever.</strong></p>
+
+  <p>B always love you, sayang.</p>
+  <p>Forever.</p>
+
+  <p class="letter-signature">
+    With love,<br>
+    <strong>Your future husband. ♡</strong>
+  </p>
+</div>
+
+</section>
+
+<section class="countdown-section">
+
+  <div class="heart">♡</div>
+
+  <h2>To Our Engagement Day</h2>
+
+  <p class="intro">
+    One step closer to our forever.
+  </p>
+
+  <div class="countdown-box">
+
+    <div class="time-box">
+      <span id="days">00</span>
+      <small>DAYS</small>
+    </div>
+
+    <div class="time-box">
+      <span id="hours">00</span>
+      <small>HOURS</small>
+    </div>
+
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <small>MINUTES</small>
+    </div>
+
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <small>SECONDS</small>
+    </div>
+
+  </div>
+
+  <h3>19 December 2026 ♡</h3>
+
+  <p class="countdown-quote">
+    "Dan Dia menjadikan antara kamu (suami isteri) perasaan kasih sayang dan rahmat. (Ar-Rum 30:21)"
+  </p>
+  <footer>
+    Made with love, just for you ♡
+  </footer>
+
+  <script>
+    function showStory() {
+      document.getElementById("story")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  
+function toggleLetter() {
+  const letter = document.getElementById("loveLetter");
+  letter.classList.toggle("open");
+}
+
+function updateCountdown() {
+
+  const target = new Date("2026-12-19T00:00:00").getTime();
+  const now = new Date().getTime();
+
+  const distance = target - now;
+
+  if (distance <= 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
